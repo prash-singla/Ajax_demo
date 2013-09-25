@@ -46,14 +46,15 @@
 
 <script>
   $(document).ready(function(){
-  $(document).on("click","a",function(){
-    
-  $('#edit-form').html($("#popovr-content").html());
-  $('a').popover('toggle');
-  var a = $('#popovr-content').html();
-  var b = $('#edit-form').html(a);
-
-  });
+    $(document).on("click","a",popover_toggle).change_content();
+    function change_content(){
+      alert("changing_content");
+      var a = $('#popovr-content').html();
+      var b = $('#edit-form').html(a);
+    }
+    function popover_toggle(){    
+      $('a').popover('toggle');
+    }
   });
 </script>
 

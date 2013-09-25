@@ -43,10 +43,16 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-    @post.destroy
+  
     respond_to do |format|
-      format.html { redirect_to posts_url }
-      format.json { head :no_content }
+      if @post.destroy
+        @posts=Post.all
+        format.html { redirect_to posts_path}
+        format.js   # renders create.js.erb, which could be used to redirect via javascript
+      else
+        format.html { render :action => 'new' }
+        format.js { render :action => 'new' }
+      end
     end
   end
 
