@@ -1,1 +1,1 @@
-$("#popovr-content").html("<%= escape_javascript(render(:partial => "edit_form"))%>");
+$("#edit_link_<%= "#{@post.id}" %> > .popover-content:first").html("<%= escape_javascript(render(:partial => "edit_form"))%>");
