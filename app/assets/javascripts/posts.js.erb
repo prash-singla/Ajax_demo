@@ -1,3 +1,13 @@
 $(document).ready(function(){
-  $("edit").onclick
-    )
+
+    $(document).on("click","a",popover_toggle);
+    $("#id_popover").blur(function(){
+    	$(this).popover('hide');
+
+    });
+    
+    function popover_toggle(){    
+      $(this).popover('toggle');
+      
+    }
+  });

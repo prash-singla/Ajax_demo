@@ -17,16 +17,9 @@
             <td><%= post.tittle %></td>
             <div id=<%= "edit_link_#{post.id}"%>>
               <td>
-                <%= link_to 'Edit', edit_post_path(post), :id => "popover-link", :rel =>"popover", remote: true, :class => "btn btn-success", :data => {:toggle => "popover", :content => "sorry for inconvenience"} %>
+                <%= link_to 'Edit', edit_post_path(post), :id =>  "popover-link-#{post.id}",  remote: true, :class => "btn btn-success" %>
               </td>
-              <div class="popover top">
-                <!-- <div class="arrow"></div>-->
-                <h3 class="popover-title">Popover top</h3>
-                <div class="popover-content" id="edit-form">
-                </div>
-              </div>
-            </div>  
-            
+            </div>
             <td><%= link_to 'Destroy', post, method: :delete,remote: true, :class => "btn btn-danger", data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
@@ -36,26 +29,9 @@
 </div>
 
 <br>
-<div id="popovr-content" ></div>
+<div id="popovr-content" style= "background-color:'red'" ></div>
 
 <%= link_to 'New Post', new_post_path,:class => "btn btn-primary btn-lg" %>
 <br>
 </br>
-
-
-<script>
-  $(document).ready(function(){
-    $(document).on("click","a",popover_toggle);
-    function change_content(){
-      alert("changing_content");
-      var a = $('#popovr-content').html();
-      var b = $('#edit-form').html(a);
-    }
-    function popover_toggle(){    
-      $('a').popover('toggle');
-    }
-  });
-</script>
-
-
 
