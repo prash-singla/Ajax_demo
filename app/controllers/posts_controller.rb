@@ -28,7 +28,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.save
     @posts=Post.all
-    
+    redirect_to posts_url    
   end
 
   # PATCH/PUT /posts/1

@@ -4,7 +4,7 @@
   <!-- Modal -->
    
 
-<div class="popover fade right in" style="top: 300px; left: 450px; display: block;" id="id_popover">
+<div class="popover fade right in" style="top: 300px; left: 450px; display: block;" id="post-window">
   <h3 class="popover-title">Edit Post.</h3>
   <div class="popover-content">
     <%= form_for @post, remote: true, :method => "patch" do |f| %>    
@@ -13,7 +13,7 @@
             <%= f.text_field :tittle %>
         </div>
         <div class="actions">
-          <%= f.submit %>
+          <%= f.submit  %>
         </div>            
     <% end  %>
   </div>
