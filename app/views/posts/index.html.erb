@@ -16,10 +16,11 @@
           <tr>
             <td><%= post.tittle %></td>
             <div id=<%= "edit_link_#{post.id}"%>>
-              <td><%= link_to 'Edit', edit_post_path(post), :id => "popover-link", :rel =>"popover", remote: true, :class => "btn btn-success", :data => {:toggle => "popover", :content => "sorry for inconvenience"} %>
+              <td>
+                <%= link_to 'Edit', edit_post_path(post), :id => "popover-link", :rel =>"popover", remote: true, :class => "btn btn-success", :data => {:toggle => "popover", :content => "sorry for inconvenience"} %>
               </td>
               <div class="popover top">
-                <div class="arrow"></div>
+                <!-- <div class="arrow"></div>-->
                 <h3 class="popover-title">Popover top</h3>
                 <div class="popover-content" id="edit-form">
                 </div>
@@ -44,7 +45,7 @@
 
 <script>
   $(document).ready(function(){
-    $(document).on("click","a",popover_toggle).change_content();
+    $(document).on("click","a",popover_toggle);
     function change_content(){
       alert("changing_content");
       var a = $('#popovr-content').html();
